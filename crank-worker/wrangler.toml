@@ -1,0 +1,35 @@
+name = "dump-them-up-crank"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+# Jadhav Rushikesh's Cloudflare account (wrangler on this PC can see two accounts)
+account_id = "7d7db815f4a8f55e80adbe86d041a846"
+# Public URL for POST /fund (new guest/Privy players get a little testnet NEAR for gas)
+workers_dev = true
+preview_urls = false
+
+# Every minute: settle the count when due, resolve abandoned jobs, sometimes play a bot turn.
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+GAME = "game.dtu-59c7f8.testnet"
+BOTS = "ember.dtu-59c7f8.testnet,pup.dtu-59c7f8.testnet,bonebag.dtu-59c7f8.testnet,whisker.dtu-59c7f8.testnet"
+NEAR_RPC = "https://rpc.testnet.fastnear.com"
+# Chance that a run plays one bot turn (0.25 = about one hit every 4 min). Bots pay gas from ~0.5 NEAR each.
+BOT_TURN_CHANCE = "0.25"
+
+FUND_YOCTO = "60000000000000000000000"   # 0.06 NEAR per new player (~45 hits at 30 Tgas prepaid)
+SPONSOR_FLOOR_YOCTO = "500000000000000000000000"   # stop funding below 0.5 NEAR
+ALLOWED_ORIGINS = "https://dump-them-up.pages.dev,http://localhost:5173"
+
+# Two new players per IP per minute
+[[ratelimits]]
+name = "FUND_LIMITER"
+namespace_id = "1001"
+simple = { limit = 2, period = 60 }
+
+# Secrets (not in this file):
+#   SPONSOR_KEY = {"account_id": "sponsor.dtu-59c7f8.testnet", "private_key": "ed25519:..."}  (cd bot && npm run sponsor)
+#   BOT_KEYS = {"<bot account>": "ed25519:<function-call key>"}
+# Set with: cd bot && npm run worker-keys

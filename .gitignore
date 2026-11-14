@@ -1,0 +1,15 @@
+node_modules/
+dist/
+target/
+.env
+.env.local
+*.log
+.DS_Store
+*.tsbuildinfo
+bot/.env
+bot/.keys/
+.wrangler/
+.dev.vars
+voice-samples/
+/demo/
+/signup-win-loose.mp4

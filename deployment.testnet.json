@@ -1,0 +1,17 @@
+{
+  "network": "testnet",
+  "game": "game.dtu-59c7f8.testnet",
+  "tokens": {
+    "dragon": "dragon.dtu-59c7f8.testnet",
+    "shitzu": "shitzu.dtu-59c7f8.testnet",
+    "neko": "neko.dtu-59c7f8.testnet",
+    "musd": "musd.dtu-59c7f8.testnet"
+  },
+  "bots": [
+    "ember.dtu-59c7f8.testnet",
+    "pup.dtu-59c7f8.testnet",
+    "bonebag.dtu-59c7f8.testnet",
+    "whisker.dtu-59c7f8.testnet"
+  ],
+  "countSeconds": 900
+}

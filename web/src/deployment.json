@@ -1,0 +1,11 @@
+{
+  "game": "game.dtu-59c7f8.testnet",
+  "rpc": "https://rpc.testnet.fastnear.com",
+  "network": "testnet",
+  "fundUrl": "https://dump-them-up-crank.jadhav-rushikesh-ggl.workers.dev/fund",
+  "privyAppId": "cmwga0spp01ei0gjq2maas4fx",
+  "rpcFallbacks": [
+    "https://testnet-rpc.intea.rs",
+    "https://rpc.testnet.near.org"
+  ]
+}

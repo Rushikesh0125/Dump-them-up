@@ -1,0 +1,23 @@
+{
+  "name": "dump-them-up-bot",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Testnet setup, the count crank, and bot cartels for Dump Them Up",
+  "scripts": {
+    "setup": "tsx src/setup.ts",
+    "crank": "tsx src/crank.ts",
+    "status": "tsx src/status.ts",
+    "worker-keys": "tsx src/worker-keys.ts",
+    "sponsor": "tsx src/sponsor.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "near-api-js": "5.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
